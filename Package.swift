@@ -5,12 +5,12 @@ import PackageDescription
 
 let package = Package(
     name: "KakaoMapsSDK-for-SwiftPlayground",
-    platforms: [.iOS(.v13), .macCatalyst(.v13)],
+    platforms: [.iOS(.v14)],
     
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "KakaoMapsSDK-SPM",
+            name: "KakaoMapsSDK-for-SwiftPlayground",
             targets: ["KakaoMapsSDK-SPM"])
         // .library(
         //     name: "KakaoMapsSDK-SPM-Dynamic",
@@ -24,7 +24,9 @@ let package = Package(
             name: "KakaoMapsSDK-SPM",
             dependencies: ["framework"],
             resources: [.copy("KakaoMapsSDKBundle.bundle/assets")]),
-        .binaryTarget(name: "framework", path: "BinaryFramework/KakaoMapsSDK.xcframework")
+        .binaryTarget(
+            name: "framework",
+            path: "BinaryFramework/KakaoMapsSDK.xcframework")
     ],
     swiftLanguageVersions: [.v5]
 )
